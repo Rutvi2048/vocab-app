@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Family Vocab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="max-w-md mx-auto min-h-screen flex flex-col p-4 pb-24">
+        <header class="mb-6 text-center">
+            <h1 class="text-3xl font-bold text-indigo-600 mb-2">🌿 Vocab Lab</h1>
+            <p class="text-slate-500 text-sm">Learning together, every day.</p>
+        </header>
+
+        <div id="wotd-card" class="bg-white border-2 border-indigo-100 p-5 rounded-3xl shadow-sm mb-6">
+            <span class="text-[10px] uppercase font-bold tracking-widest text-indigo-400">Word of the Day</span>
+            <h2 id="wotd-title" class="text-2xl font-bold text-slate-900">...</h2>
+            <p id="wotd-meaning" class="text-slate-600 italic mt-1"></p>
+        </div>
+
+        <div class="sticky top-2 z-10 mb-6">
+            <input type="text" id="searchInput" placeholder="Search our words..." 
+                class="w-full p-4 rounded-2xl border-none shadow-lg bg-white focus:ring-2 focus:ring-indigo-400">
+        </div>
+
+        <div id="wordList" class="space-y-4">
+            </div>
+
+        <button onclick="openModal()" class="fixed bottom-6 right-6 bg-indigo-600 text-white w-16 h-16 rounded-full text-3xl shadow-2xl hover:bg-indigo-700 transition-transform active:scale-90 z-20">+</button>
+    </div>
+
+    <div id="modal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+        <div class="bg-white w-full max-w-sm rounded-3xl p-6 shadow-2xl">
+            <h3 class="text-xl font-bold mb-4 text-slate-800">New Word</h3>
+            <input type="text" id="newWord" placeholder="Word (e.g. Serene)" class="w-full mb-3 p-3 bg-slate-100 rounded-xl outline-none focus:ring-2 focus:ring-indigo-400">
+            <input type="text" id="newMeaning" placeholder="Meaning" class="w-full mb-3 p-3 bg-slate-100 rounded-xl outline-none focus:ring-2 focus:ring-indigo-400">
+            <textarea id="newExample" placeholder="Example Sentence" class="w-full mb-4 p-3 bg-slate-100 rounded-xl outline-none focus:ring-2 focus:ring-indigo-400"></textarea>
+            <div class="flex gap-2">
+                <button onclick="saveWord()" class="flex-1 bg-indigo-600 text-white py-3 rounded-xl font-bold">Save Word</button>
+                <button onclick="closeModal()" class="flex-1 bg-slate-200 text-slate-600 py-3 rounded-xl font-bold">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
